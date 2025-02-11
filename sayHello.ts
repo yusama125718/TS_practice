@@ -75,4 +75,15 @@ enum Fruits{
   Apple,
   Orange
 }
+// こんな感じで使える
+const select: Fruits = Fruits.Apple
 
+// 対応する値を設定することもできる
+enum Body {
+  HAND = 'Hand',
+  HEAD = 'Head',
+  LEG = 'Leg'
+}
+
+const str = 'Hand';
+const target = str as Body
