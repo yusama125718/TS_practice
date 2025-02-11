@@ -34,3 +34,17 @@ function splitbird(birds) {
     return birds.split(',');
 }
 console.log(singBird(splitbird));
+// 宣言時に代入すると型推論が働くので宣言しなくても大丈夫なこともある
+var num = 10;
+// こんな感じで使う
+function PrintPoint(p) {
+    console.log("今の地点はX:${p.x},Y:${p.y}です");
+}
+PrintPoint({ x: 100, y: 200 });
+// JSにはないがenumがある
+var Fruits;
+(function (Fruits) {
+    Fruits[Fruits["Melon"] = 0] = "Melon";
+    Fruits[Fruits["Apple"] = 1] = "Apple";
+    Fruits[Fruits["Orange"] = 2] = "Orange";
+})(Fruits || (Fruits = {}));

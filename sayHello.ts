@@ -42,3 +42,37 @@ function splitbird(birds: string): string[]{
 }
 console.log(singBird(splitbird))
 
+// 宣言時に代入すると型推論が働くので宣言しなくても大丈夫なこともある
+let num = 10
+
+// 型エイリアスっていうらしい
+type Point = {
+  x : number;
+  y : number; 
+}
+
+// こんな感じで使う
+function PrintPoint(p: Point){
+  console.log("今の地点はX:${p.x},Y:${p.y}です")
+}
+PrintPoint({x: 100, y:200})
+
+// インターフェースはエイリアスと似てるけどちょっと違う
+// =がいらないとか
+interface User {
+  name : string;
+  sex : boolean;
+}
+
+// インターフェースなら後から拡張できる
+interface User {
+  age : number;
+}
+
+// JSにはないがenumがある
+enum Fruits{
+  Melon,
+  Apple,
+  Orange
+}
+
